@@ -1,63 +1,53 @@
 Iteration 1
 
-
- Ask the user for a type of sandwich (chicken $5.25, beef $6.25, tofu $5.75).
-
-
-Have the program output the user’s sandwich selection to verify that the program is working correctly.
+Ask for ice cream flavor: vanilla ($3.00), chocolate ($3.25), or strawberry ($3.50) (if statement + loop)
 
 Iteration 2
 
+Ask the user whether they would like toppings (yes, no) (if statement + loop)
 
-Ask the user whether they would like a beverage (yes, no).
-
-
-If they say yes, ask what size beverage they would like:
-small $1.00
-medium $1.75
-large $2.25
-
-
-Have the program output the user’s beverage size selection, or lack of selection, to verify that the program is working correctly.
-
-
-Have the program output the total cost so far.
+If yes:
+  - Ask for topping portion size:
+    - small $0.50
+    - medium $0.75
+    - large $1.00
+    (if statements + loops)
+  - Ask for topping type: sprinkles, chocolate chips, or gummy bears
+    (if statements + loops)
 
 Iteration 3
 
+Ask the user whether they would like a beverage (yes, no) (if statement + loop)
 
-Ask the user whether they would like french fries (yes, no).
-
-
-If they say yes, ask what size french fries they would like:
-small $1.00
-medium $1.50
-large $2.00
-
-
-If they say “small,” ask the user whether they’d like to mega-size their fries (yes, no).
-
-
-If the user inputs yes to mega-size, give them large fries at the large fries price instead of their small fries.
-
-
-Have the program output the user’s fries selection to verify that the program is working correctly.
-
-
-Adjust the program so the total cost only outputs to the user after their sandwich, drink, and fries selection.
+If yes:
+  - Ask for drink size:
+    - small $1.00
+    - medium $1.75
+    - large $2.25
+    (if statements + loops)
+  - Ask for drink type: lemonade, iced tea, or milkshake
+    (if statements + loops)
 
 Iteration 4
 
+Ask the user whether they would like a cone or cup (yes, no) (if statement + loop)
 
-Ask the user how many ketchup packets they would like (enter a positive integer; cost is $0.25 per packet).
+If yes, ask what type they would like:
+  - sugar cone $0.50
+  - waffle cone $0.75
+  - cup $0.25
+  (if statements + loops)
 
-After ordering the sandwich, drink, fries, and ketchup packets:
+Ask orderer how many servings of whipped cream they would like (enter a non-negative integer; cost is $0.50 per serving).
+
+.50 * x, x being servings
+
+If the user selected ice cream with toppings and a cone, reduce the total cost of the order by $0.50.
+if specific + loop
 
 
-If the user selected a sandwich, french fries, and a beverage, reduce the total cost of the order by $1.00.
+The program informs the user of their menu selections, FOR ONLY ORDERED ITEMS
+if specifics + loop
 
-
-The program informs the user of their menu selections, for only the items they ordered.
-
-
-The program should print the total cost of the order. Remove any other totals before this point.
+The program prints the total cost of the order
+total_cost = ?
