@@ -68,22 +68,34 @@ if YesorNoDrink == "yes":
         Drink = input("Please enter lemonade, iced tea, or milkshake: ").lower()
 else:
     Drink = ""
-YesorNoCone = input("Would you like a cone or cup? ")
-YesorNoCone = YesorNoCone.lower()
-ConeList = ["yes", "no"]
-while YesorNoCone not in ConeList:
-    YesorNoCone = input("Please enter yes or no: ").lower()
-if YesorNoCone == "yes":
-    ConeType = input("What type would you like? Sugar cone ($0.50), Waffle cone ($0.75), or Cup ($0.25)? ")
-    ConeType = ConeType.lower()
-    ConeTypes = ["sugar cone", "waffle cone", "cup"]
-    while ConeType not in ConeTypes:
-        ConeType = input("Please enter sugar cone, waffle cone, or cup: ").lower()
+ConeType = input("What type would you like? Sugar cone ($0.50), Waffle cone ($0.75), or Cup ($0.25)? ")
+ConeType = ConeType.lower()
+ConeTypes = ["sugar cone", "waffle cone", "cup"]
+while ConeType not in ConeTypes:
+    ConeType = input("Please enter sugar cone, waffle cone, or cup: ").lower()
     if ConeType == "sugar cone":
         total_cost += 0.50
     elif ConeType == "waffle cone":
         total_cost += 0.75
     elif ConeType == "cup":
         total_cost += 0.25
+    else:
+        ConeType = input("Please enter sugar cone, waffle cone, or cup: ").lower()
+WhippedCream = int(input("Would you like whipped cream? Enter number of servings (each serving costs $0.50): "))
+if WhippedCream < 0:
+    print("Please enter a number 0 or above: ")
+elif WhippedCream >= 5:
+    print("Sorry, we cannot provide that many servings of whipped cream. Please enter a number less than 5: ")
 else:
-    ConeType = ""
+    total_cost += 0.50 * int(WhippedCream)
+    print(f'You ordered {WhippedCream} servings of whipped cream. That brings your total cost to ${total_cost}')
+if flavor != "" and Topping != "" and YesorNoCone != "":
+    total_cost -= 0.50
+    print(f"You ordered a {flavor} ice cream with {Topping}, in a {ConeType}")
+    print(f"Since you got ice cream with toppings and a cone, your total cost is deducted $0.50. That means your order costs ${total_cost}")
+elif flavor != "" and Topping != "":
+    print(f"You ordered a {flavor} ice cream with {Topping}")
+    print(f"Your total cost is ${total_cost}")
+elif flavor != "" and YesorNoCone != "":
+    print(f'You ordered a {flavor} ice cream in a {ConeType}')
+    print(f"Your total cost is ${total_cost}")
