@@ -68,3 +68,22 @@ if YesorNoDrink == "yes":
         Drink = input("Please enter lemonade, iced tea, or milkshake: ").lower()
 else:
     Drink = ""
+YesorNoCone = input("Would you like a cone or cup? ")
+YesorNoCone = YesorNoCone.lower()
+ConeList = ["yes", "no"]
+while YesorNoCone not in ConeList:
+    YesorNoCone = input("Please enter yes or no: ").lower()
+if YesorNoCone == "yes":
+    ConeType = input("What type would you like? Sugar cone ($0.50), Waffle cone ($0.75), or Cup ($0.25)? ")
+    ConeType = ConeType.lower()
+    ConeTypes = ["sugar cone", "waffle cone", "cup"]
+    while ConeType not in ConeTypes:
+        ConeType = input("Please enter sugar cone, waffle cone, or cup: ").lower()
+    if ConeType == "sugar cone":
+        total_cost += 0.50
+    elif ConeType == "waffle cone":
+        total_cost += 0.75
+    elif ConeType == "cup":
+        total_cost += 0.25
+else:
+    ConeType = ""
