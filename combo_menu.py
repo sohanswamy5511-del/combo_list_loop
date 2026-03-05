@@ -45,3 +45,26 @@ if YesorNoToppings == "yes":
         Topping = input("Please enter sprinkles, chocolate chips, or gummy bears: ").lower()
 else:
     Topping = ""
+YesorNoDrink = input("Would you like a drink? ")
+YesorNoDrink = YesorNoDrink.lower()
+DrinkList = ["yes", "no"]
+while YesorNoDrink not in DrinkList:
+    YesorNoDrink = input("Please enter yes or no: ").lower()
+if YesorNoDrink == "yes":
+    Size = input("What size drink would you like? Small ($1.00), Medium ($1.75), or Large ($2.25)? ")
+    Size = Size.lower()
+    Sizes = ["small", "medium", "large"]
+    while Size not in Sizes:
+        Size = input("Please enter small, medium, or large: ").lower()
+    if Size == "small":
+        total_cost += 1.00
+    elif Size == "medium":
+        total_cost += 1.75
+    elif Size == "large":
+        total_cost += 2.25
+    Drink = input("What drink would you like? Lemonade, iced tea, or milkshake? ")
+    Drink = Drink.lower()
+    while Drink not in ["lemonade", "iced tea", "milkshake"]:
+        Drink = input("Please enter lemonade, iced tea, or milkshake: ").lower()
+else:
+    Drink = ""
