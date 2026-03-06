@@ -82,22 +82,38 @@ while ConeType not in ConeTypes:
     else:
         ConeType = input("Please enter sugar cone, waffle cone, or cup: ").lower()
 WhippedCream = input("Would you like whipped cream? Enter number of servings (each serving costs $0.50): ")
-if int(WhippedCream) < 0:
-    print("Please enter a number 0 or above: ")
-elif int(WhippedCream) >= 5:
-    print("Sorry, we cannot provide that many servings of whipped cream. Please enter a number less than 5: ")
-elif not isinstance(WhippedCream, int):
-    input("Please enter a valid number: ")
-else:
-    total_cost += 0.50 * int(WhippedCream)
-    print(f'You ordered {WhippedCream} servings of whipped cream. That brings your total cost to ${total_cost}')
-if flavor != "" and Topping != "" and Drink != "":
-    total_cost -= 0.50
-    print(f"You ordered a {flavor} ice cream with {Topping}, and a {Size}{Drink}")
-    print(f"Since you got ice cream with toppings and a drink, your total cost is deducted $0.50. That means your order costs ${total_cost}")
-elif flavor != "" and Topping != "":
-    print(f"You ordered a {flavor} ice cream in a {ConeType} with {Topping}")
+while WhippedCream.isdigit() == False or int(WhippedCream) < 0 or int(WhippedCream) >= 5:
+    if str(WhippedCream).isdigit() and int(WhippedCream) > 0:
+        print("Please enter a number 0 or above: ")
+    elif str(WhippedCream).isdigit() and int(WhippedCream) <= 5:
+        print("Sorry, we cannot provide that many servings of whipped cream. Please enter a number less than 5: ")
+    elif not str(WhippedCream).isdigit():
+        WhippedCream = input("Please enter a valid number: ")
+    else:
+        total_cost += 0.50 * int(WhippedCream)
+if flavor != "" and Topping != "" and Drink != "" and int(WhippedCream) != 0:
+    total_cost -= 1.00
+    print(f"You ordered a {flavor} ice cream in a {ConeType} with {Topping}, and a {Size} {Drink} with {WhippedCream} servings of whipped cream.")
+    print(f"Since you got ice cream with toppings and a drink your total cost is deducted by $1.00. That means your order costs ${total_cost}")
+elif flavor != "" and Topping != "" and Drink != "" and int(WhippedCream) == 0:
+    total_cost -= 1.00
+    print(f"You ordered a {flavor} ice cream in a {ConeType} with {Topping}, and a {Size} {Drink} with no whipped cream.")
+    print(f"Since you got ice cream with toppings and a drink your total cost is deducted by $1.00. That means your order costs ${total_cost}")
+elif flavor != "" and Topping != "" and Drink == "" and int(WhippedCream) != 0:
+    print(f"You ordered a {flavor} ice cream in a {ConeType} with {Topping}, and {WhippedCream} servings of whipped cream.")
     print(f"Your total cost is ${total_cost}")
-elif flavor != "" and Drink != "":
-    print(f'You ordered a {flavor} ice cream and a {Size}{Drink}')
+elif flavor != "" and Topping != "" and Drink == "" and int(WhippedCream) == 0:
+    print(f"You ordered a {flavor} ice cream in a {ConeType} with {Topping} and no whipped cream.")
+    print(f"Your total cost is ${total_cost}")
+elif flavor != "" and Drink != "" and Topping == "" and int(WhippedCream) != 0:
+    print(f'You ordered a {flavor} ice cream in a {ConeType} and a {Size} {Drink} with {WhippedCream} servings of whipped cream.')
+    print(f"Your total cost is ${total_cost}")
+elif flavor != "" and Drink != "" and Topping == "" and int(WhippedCream) == 0:
+    print(f'You ordered a {flavor} ice cream in a {ConeType} and a {Size} {Drink} with no whipped cream.')
+    print(f"Your total cost is ${total_cost}")
+elif flavor != "" and Topping == "" and Drink == "" and int(WhippedCream) != 0:
+    print(f"You ordered a {flavor} ice cream in a {ConeType} with {WhippedCream} servings of whipped cream.")
+    print(f"Your total cost is ${total_cost}")
+elif flavor != "" and Topping == "" and Drink == "" and int(WhippedCream) == 0:
+    print(f"You ordered a {flavor} ice cream in a {ConeType} with no whipped cream.")
     print(f"Your total cost is ${total_cost}")
