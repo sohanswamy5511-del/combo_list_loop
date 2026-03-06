@@ -82,9 +82,9 @@ while ConeType not in ConeTypes:
     else:
         ConeType = input("Please enter sugar cone, waffle cone, or cup: ").lower()
 WhippedCream = input("Would you like whipped cream? Enter number of servings (each serving costs $0.50): ")
-if WhippedCream < 0:
+if int(WhippedCream) < 0:
     print("Please enter a number 0 or above: ")
-elif WhippedCream >= 5:
+elif int(WhippedCream) >= 5:
     print("Sorry, we cannot provide that many servings of whipped cream. Please enter a number less than 5: ")
 elif not isinstance(WhippedCream, int):
     input("Please enter a valid number: ")
