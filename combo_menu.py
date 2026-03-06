@@ -89,13 +89,13 @@ elif WhippedCream >= 5:
 else:
     total_cost += 0.50 * int(WhippedCream)
     print(f'You ordered {WhippedCream} servings of whipped cream. That brings your total cost to ${total_cost}')
-if flavor != "" and Topping != "" and YesorNoCone != "":
+if flavor != "" and Topping != "" and Drink != "":
     total_cost -= 0.50
-    print(f"You ordered a {flavor} ice cream with {Topping}, in a {ConeType}")
-    print(f"Since you got ice cream with toppings and a cone, your total cost is deducted $0.50. That means your order costs ${total_cost}")
+    print(f"You ordered a {flavor} ice cream with {Topping}, and a {Size}{Drink}")
+    print(f"Since you got ice cream with toppings and a drink, your total cost is deducted $0.50. That means your order costs ${total_cost}")
 elif flavor != "" and Topping != "":
     print(f"You ordered a {flavor} ice cream with {Topping}")
     print(f"Your total cost is ${total_cost}")
-elif flavor != "" and YesorNoCone != "":
-    print(f'You ordered a {flavor} ice cream in a {ConeType}')
+elif flavor != "" and Drink != "":
+    print(f'You ordered a {flavor} ice cream and a {Size}{Drink}')
     print(f"Your total cost is ${total_cost}")
