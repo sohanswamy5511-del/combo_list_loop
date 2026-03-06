@@ -83,10 +83,10 @@ while ConeType not in ConeTypes:
         ConeType = input("Please enter sugar cone, waffle cone, or cup: ").lower()
 WhippedCream = input("Would you like whipped cream? Enter number of servings (each serving costs $0.50): ")
 while WhippedCream.isdigit() == False or int(WhippedCream) < 0 or int(WhippedCream) >= 5:
-    if str(WhippedCream).isdigit() and int(WhippedCream) > 0:
-        print("Please enter a number 0 or above: ")
-    elif str(WhippedCream).isdigit() and int(WhippedCream) <= 5:
-        print("Sorry, we cannot provide that many servings of whipped cream. Please enter a number less than 5: ")
+    if str(WhippedCream).isdigit() and int(WhippedCream) < 0:
+        input("Please enter a number 0 or above: ")
+    elif str(WhippedCream).isdigit() and int(WhippedCream) >= 5:
+        input("Sorry, we cannot provide that many servings of whipped cream. Please enter a number less than 5: ")
     elif not str(WhippedCream).isdigit():
         WhippedCream = input("Please enter a valid number: ")
     else:
