@@ -86,6 +86,8 @@ if WhippedCream < 0:
     print("Please enter a number 0 or above: ")
 elif WhippedCream >= 5:
     print("Sorry, we cannot provide that many servings of whipped cream. Please enter a number less than 5: ")
+elif not isinstance(WhippedCream, int):
+    input("Please enter a valid number: ")
 else:
     total_cost += 0.50 * int(WhippedCream)
     print(f'You ordered {WhippedCream} servings of whipped cream. That brings your total cost to ${total_cost}')
