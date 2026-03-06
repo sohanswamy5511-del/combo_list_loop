@@ -68,7 +68,7 @@ if YesorNoDrink == "yes":
         Drink = input("Please enter lemonade, iced tea, or milkshake: ").lower()
 else:
     Drink = ""
-ConeType = input("What type would you like? Sugar cone ($0.50), Waffle cone ($0.75), or Cup ($0.25)? ")
+ConeType = input("What type cone would you like? Sugar cone ($0.50), Waffle cone ($0.75), or Cup ($0.25)? ")
 ConeType = ConeType.lower()
 ConeTypes = ["sugar cone", "waffle cone", "cup"]
 while ConeType not in ConeTypes:
@@ -94,7 +94,7 @@ if flavor != "" and Topping != "" and Drink != "":
     print(f"You ordered a {flavor} ice cream with {Topping}, and a {Size}{Drink}")
     print(f"Since you got ice cream with toppings and a drink, your total cost is deducted $0.50. That means your order costs ${total_cost}")
 elif flavor != "" and Topping != "":
-    print(f"You ordered a {flavor} ice cream with {Topping}")
+    print(f"You ordered a {flavor} ice cream in a {ConeType} with {Topping}")
     print(f"Your total cost is ${total_cost}")
 elif flavor != "" and Drink != "":
     print(f'You ordered a {flavor} ice cream and a {Size}{Drink}')
