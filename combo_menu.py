@@ -81,7 +81,7 @@ while ConeType not in ConeTypes:
         total_cost += 0.25
     else:
         ConeType = input("Please enter sugar cone, waffle cone, or cup: ").lower()
-WhippedCream = int(input("Would you like whipped cream? Enter number of servings (each serving costs $0.50): "))
+WhippedCream = input("Would you like whipped cream? Enter number of servings (each serving costs $0.50): ")
 if WhippedCream < 0:
     print("Please enter a number 0 or above: ")
 elif WhippedCream >= 5:
