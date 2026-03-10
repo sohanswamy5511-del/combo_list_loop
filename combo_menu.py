@@ -94,7 +94,6 @@ while True:
         except ValueError:
             WhippedCream = input("Please enter a valid number: ")
 
-
     description = f'{flavor} ice cream'
     if Topping:
         description += f' with {ToppingSize} {Topping}'
