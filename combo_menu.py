@@ -1,4 +1,4 @@
-orders = []    # each entry will be dict with description and cost
+orders = []
 while True:
     flavor = ""
     ToppingSize = ""
