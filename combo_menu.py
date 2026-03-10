@@ -106,7 +106,7 @@ while True:
     if Topping and Drink:
         discount = 1.00
         cost -= discount
-        description += f' (includes $1.00 combo discount) with {ToppingSize} {Topping} and a {Size} {Drink}'
+        description += f' (includes $1.00 combo discount)'
         
     orders.append({"description": description, "cost": cost})
         
@@ -116,6 +116,10 @@ while True:
     if another == "no":
         break
 print("--- Order Summary ---")
-for idx, i in enumerate(orders, start=1):
-    print(f"{idx}. {i['description']}: ${i['cost']:.2f}")
-
+for order in orders:
+    i = 1
+    while i < len(orders) + 1:
+        print(f'{i}. {order['description']}: Cost of ${order['cost']:.2f}')
+        i += 1
+    total_cost_orders = sum(order['cost'] for order in orders)
+    print(f"Total cost of all orders: ${total_cost_orders:.2f}")
