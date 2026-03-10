@@ -121,4 +121,4 @@ for order in orders:
         print(f'{i}. {order['description']}: Cost of ${order['cost']:.2f}')
         i += 1
     total_cost_orders = sum(order['cost'] for order in orders)
-    print(f"Total cost of all orders: ${total_cost_orders:.2f}")
+    print(f'Total cost of all orders: ${total_cost_orders:.2f}')
