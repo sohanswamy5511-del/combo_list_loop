@@ -114,11 +114,17 @@ while True:
         another = input("Please enter yes or no: ").lower()
     if another == "no":
         break
-print("--- Order Summary ---")
+
+unique_orders = []
+seen_descriptions = set()
 for order in orders:
-    i = 1
-    while i < len(orders) + 1:
-        print(f'{i}. {order['description']}: Cost of ${order['cost']:.2f}')
-        i += 1
-    total_cost_orders = sum(order['cost'] for order in orders)
-    print(f'Total cost of all orders: ${total_cost_orders:.2f}')
+    if order['description'] not in seen_descriptions:
+        seen_descriptions.add(order['description'])
+        unique_orders.append(order)
+
+print("--- Order Summary ---")
+for i, order in enumerate(unique_orders, start=1):
+    print(f'{i}. {order["description"]}: Cost of ${order["cost"]:.2f}')
+
+total_cost_orders = sum(order['cost'] for order in orders)
+print(f'Total cost of all orders: ${total_cost_orders:.2f}')
